@@ -26,16 +26,6 @@ This project provides:
 
 ---
 
-## 📊 Results
-
-- **Mean Absolute Error (MAE):** 2.61%  
-- **Inference Time:** 1.09 ms  
-- **Energy Consumption:** 0.06 J  
-
-The SNN model outperforms conventional deep learning models in computational efficiency while maintaining high predictive accuracy. These characteristics make it particularly suitable for integration into **energy-constrained battery management systems**, supporting both **first-life and second-life applications**.
-
----
-
 ## 📚 Reference
 
 Arbaoui, S., Heitzmann, T., Zitouni, M., et al. *Spiking Neural Networks for Accurate and Efficient State-of-Health Estimation of Lithium-Ion Batteries Across Varying Temperatures*. To be published in **Energy and AI**.
