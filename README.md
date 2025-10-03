@@ -1,6 +1,6 @@
 # Spiking Neural Networks for Accurate and Efficient SOH Estimation of Lithium-Ion Batteries
 
-![Graphical Abstract](Figures/graphicalAbs.pdf)
+![Graphical Abstract](Images/graphicalAbs.pdf)
 
 This repository contains the dataset and code associated with our research on **Spiking Neural Networks (SNNs)** for estimating the **State of Health (SOH)** of lithium-ion batteries across varying temperatures. Developed at **Université de Strasbourg, INSA de Strasbourg, ICube Laboratory (UMR 7357, CNRS)**.
 
