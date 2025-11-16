@@ -21,8 +21,8 @@ This project provides:
 2. **A neuromorphic Spiking Neural Network (SNN) model**:  
    - Mimics biological neurons using **sparse, time-coded spikes**  
    - High temporal precision and **low energy consumption**  
-   - Achieves **MAE of 2.61%** for SOH estimation  
-   - **Inference time:** 1.09 ms, **Energy consumption:** 0.06 J  
+   - Achieves **MAE of 4.5%** for SOH estimation  
+   - **Inference time:** 3.55𝜇s, **Energy consumption:** 0.36 mJ  
 
 ---
 
