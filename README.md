@@ -28,4 +28,4 @@ This project provides:
 
 ## 📚 Reference
 
-Arbaoui, S., Heitzmann, T., Zitouni, M., et al. *Spiking Neural Networks for Accurate and Efficient State-of-Health Estimation of Lithium-Ion Batteries Across Varying Temperatures*. To be published in **Energy and AI**.
+Arbaoui, S., Heitzmann, T., Zitouni, M., et al. *Spiking Neural Networks for Accurate and Efficient State-of-Health Estimation of Lithium-Ion Batteries Across Varying Temperatures*. To be published in ****.
