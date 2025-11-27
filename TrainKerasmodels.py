@@ -56,28 +56,33 @@ def build_LSTM_model(inputShape, output):
 
 
 def build_CNNLSTM_model(input_shape, output_shape):
-    model = Sequential(
-        [
-            Input(shape=input_shape),
-            Conv1D(filters=64, kernel_size=5, activation="relu"),
-            MaxPooling1D(pool_size=2),
-            LSTM(64, return_sequences=True),
-            LSTM(32),
-            Dropout(0.3),
-            Dense(64, activation="relu"),
-            Dense(output_shape, activation="sigmoid"),
-        ]
-    )
-    opt = tf.keras.optimizers.Adam(learning_rate=0.0001)
+    inputs = Input(shape=input_shape)
+
+    # Convolutional layers
+    x = Conv1D(64, 5, activation="relu", padding="same")(inputs)
+    x = BatchNormalization()(x)
+    x = Conv1D(128, 3, activation="relu", padding="same")(x)
+    x = MaxPooling1D(2)(x)
+    x = Dropout(0.2)(x)
+
+    # LSTM layers
+    x = Bidirectional(LSTM(128, return_sequences=True))(x)
+    x = Dropout(0.3)(x)
+    x = LSTM(64)(x)
+    x = Dropout(0.3)(x)
+
+    # Dense layers
+    x = Dense(64, activation="relu")(x)
+    x = Dense(32, activation="relu")(x)
+
+    outputs = Dense(output_shape, activation="linear")(x)
+
+    model = Model(inputs, outputs)
+    opt = tf.keras.optimizers.Adam(learning_rate=0.001)
     model.compile(
         optimizer=opt,
         loss="mae",
-        metrics=[
-            "mae",
-            "mse",
-            tf.keras.metrics.RootMeanSquaredError(),
-            tf.keras.metrics.MeanAbsolutePercentageError(),
-        ],
+        metrics=["mae", "mse", tf.keras.metrics.RootMeanSquaredError()]
     )
     return model
 
@@ -223,3 +228,4 @@ Steps_out = [1,5, 10, 25, 50, 100, 200]
 
 TestLSTM(Steps_in, Steps_out, maxlength=1500)
 TestCNN(Steps_in, Steps_out, maxlength=1500)
+
